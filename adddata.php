@@ -60,5 +60,5 @@ mysqli_query($con,"CREATE TABLE `$forcomment` (
    `userid` varchar(15),
   PRIMARY KEY (`id`)
 )");
-echo "1";
+echo "Ad have been posten succesfully";
 ?>
