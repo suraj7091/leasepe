@@ -46,7 +46,7 @@
 					document.getElementById('comment_logs').innerHTML = xmlhttp.responseText; 
 				}
 			}
-				xmlhttp.open('GET', 'insert.php?name='+name+'&comments='+comments+'&parent='+parent+'&userid='+userid+'&id='+adid, true); 
+				xmlhttp.open('GET', 'comment_insert.php?name='+name+'&comments='+comments+'&parent='+parent+'&userid='+userid+'&id='+adid, true); 
 			xmlhttp.send();}
 			else
 			{
@@ -77,7 +77,7 @@
 					document.getElementById('comment_logs').innerHTML = xmlhttp.responseText; 
 				}
 			}
-			xmlhttp.open('GET', 'insert.php?name='+name+'&comments='+comments+'&parent='+parent+'&userid='+userid+'&id='+adid, true); 
+			xmlhttp.open('GET', 'comment_insert.php?name='+name+'&comments='+comments+'&parent='+parent+'&userid='+userid+'&id='+adid, true); 
 			xmlhttp.send();
 			}
 			else

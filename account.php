@@ -69,8 +69,8 @@ border-radius:6px;
         </ul>
         <?php
         include "connection.php";
-        $bd = mysqli_connect($mysql_hostname1, $mysql_user1, $mysql_password1) or die("Could not connect database");
-        mysqli_select_db($bd, $mysql_database1) or die("Could not select database");
+        // $bd = mysqli_connect($mysql_hostname1, $mysql_user1, $mysql_password1) or die("Could not connect database");
+        // mysqli_select_db($bd, $mysql_database1) or die("Could not select database");
         $id = $_SESSION['SESS_FIRST_NAME'];
         $result = mysqli_query($bd, "SELECT * FROM member WHERE phonenumber='$id'");
         $row1 = mysqli_fetch_array($result);
@@ -94,9 +94,7 @@ border-radius:6px;
 include "connection.php";
 $id = $_SESSION['SESS_FIRST_NAME'];
 $id = "s" . $id;
-$mysql_database = "adds";
-$bd = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-mysqli_select_db($bd, $mysql_database) or die("Could not select database");
+
 $result = mysqli_query($bd, "SELECT * FROM $id");
 echo nl2br("\n");
 if ($result != null) {

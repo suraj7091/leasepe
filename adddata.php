@@ -16,10 +16,10 @@ $city=mysqli_real_escape_string($bd,$_SESSION['city']);
 $file1=mysqli_real_escape_string($bd,$_SESSION['file1']);
 $file2=mysqli_real_escape_string($bd,$_SESSION['file2']);
 $des=mysqli_real_escape_string($bd,$_SESSION['desc']);
-$mysql_database="adds";
+// $mysql_database="adds";
 
-$bd = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-mysqli_select_db($bd, $mysql_database) or die("Could not select database");
+// $bd = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
+// mysqli_select_db($bd, $mysql_database) or die("Could not select database");
 $tablename=$_SESSION['SESS_FIRST_NAME'];
 $tablename1="s".$tablename;
 $t= "SELECT * FROM $tablename1 WHERE 1";
@@ -51,7 +51,7 @@ else
 	mysqli_query($bd,"INSERT INTO addsall_(id,title,category,price,name,phone,city,file1,file2,des)VALUES('$id2','$title','$category','$price','$name','$phone','$city','$file1','$file2','$des')");
 }
 
-mysqli_query($con,"CREATE TABLE `$forcomment` (
+mysqli_query($bd,"CREATE TABLE `$forcomment` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
   `comments` text NOT NULL,

@@ -108,10 +108,10 @@ function smsgatewaycenter_com_Send($mobile, $message, $debug = false)
 function smsgatewaycenter_com_OTP($length = 5, $chars = '0123456789')
 {
     $chars_length = (strlen($chars) - 1);
-    $string = $chars{rand(0, $chars_length)};
+    $string = $chars[rand(0, $chars_length)];
     for ($i = 1; $i < $length; $i = strlen($string)) {
-        $r = $chars{rand(0, $chars_length)};
-        if ($r != $string{$i - 1}) {
+        $r = $chars[rand(0, $chars_length)];
+        if ($r != $string[$i - 1]) {
             $string .= $r;
         }
 

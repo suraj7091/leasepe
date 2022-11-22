@@ -22,10 +22,7 @@ $city=$_POST['city'];
 $des=$_POST['desc'];
 $id=$_SESSION['id'];
 $price=$price.$rent;
-$mysql_database="adds";
 $phone=$_SESSION['SESS_FIRST_NAME'];
-$bd = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-mysqli_select_db($bd, $mysql_database) or die("Could not select database");
 $tablename=$_SESSION['SESS_FIRST_NAME'];
 $k=$tablename.$id;
 

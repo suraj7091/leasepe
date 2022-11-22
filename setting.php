@@ -88,8 +88,8 @@ if (!isset($_SESSION['SESS_FIRST_NAME'])) {
       </ul>
       <?php
 include "connection.php";
-$bd = mysqli_connect($mysql_hostname1, $mysql_user1, $mysql_password1) or die("Could not connect database");
-mysqli_select_db($bd, $mysql_database1) or die("Could not select database");
+// $bd = mysqli_connect($mysql_hostname1, $mysql_user1, $mysql_password1) or die("Could not connect database");
+// mysqli_select_db($bd, $mysql_database1) or die("Could not select database");
 $id = $_SESSION['SESS_FIRST_NAME'];
 $result = mysqli_query($bd, "SELECT * FROM member WHERE phonenumber='$id'");
 $row1 = mysqli_fetch_array($result);

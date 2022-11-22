@@ -102,11 +102,11 @@ if (!(isset($_GET['search2']))) {
     <?php
 $search2 = $_GET['search2'];
 include "connection.php";
-$mysql_database = "adds";
+// $mysql_database = "add";
 $datatable = "addsall_";
 $results_per_page = 10;
-$bd = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-mysqli_select_db($bd, $mysql_database) or die("Could not select database");
+// $bd = mysqli_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
+// mysqli_select_db($bd, $mysql_database) or die("Could not select database");
 
 if (isset($_GET["page"])) {
     $page = $_GET["page"];

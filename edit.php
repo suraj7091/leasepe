@@ -66,7 +66,6 @@ select {
   <p style='margin-left:10px;font-size:25px;margin-top:7px'>Edit add</p>
   <hr>
   <?php
-$mysql_database = "adds";
 $user = $_SESSION["SESS_FIRST_NAME"];
 $id = mysqli_real_escape_string($bd, $_GET["id"]);
 $_SESSION['id'] = $id;

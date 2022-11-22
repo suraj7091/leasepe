@@ -49,7 +49,7 @@ if (!isset($_GET['id'])) {
 }
 $id = mysqli_real_escape_string($bd, $_GET['id']);
 $sql = "select * from addsall_ where id='$id'";
-$rs = mysqli_query($bd1, $sql);
+$rs = mysqli_query($bd, $sql);
 $row = mysqli_fetch_array($rs);
 if ($row[7] != null && $row[8] != null) {
     echo "<div class='row'><div class='col-md-2'	style='float:left;'><input type='image'  src='pa.png' onclick='func()'/></div>";
@@ -155,7 +155,7 @@ if (isset($_SESSION['SESS_FIRST_NAME'])) {
 					<div id="comment_logs">
 						<?php
 $comment = $_GET['id'];
-$result = mysqli_query($con, "SELECT * FROM $comment ORDER BY date_publish ASC");
+$result = mysqli_query($bd, "SELECT * FROM $comment ORDER BY date_publish ASC");
 
 while ($row = mysqli_fetch_array($result)) {
 
@@ -171,7 +171,7 @@ while ($row = mysqli_fetch_array($result)) {
         echo "<div class='comment_input' id='die" . $row['id'] . "' style='display:none;'> <form name='form'><textarea name='comments' id='" . $row['id'] . "' placeholder='Leave Comments Here...' style='width:80%; height:100px;'></textarea></br></br> <a href='#' onClick='commentSubmit2(" . $row['id'] . ")' class='button'>Post</a></br></form></div>";
         echo "</div>";
         $p = $row['id'];
-        $result1 = mysqli_query($con, "SELECT * FROM $comment where parent='$p' ORDER BY date_publish ASC");
+        $result1 = mysqli_query($bd, "SELECT * FROM $comment where parent='$p' ORDER BY date_publish ASC");
         while ($row1 = mysqli_fetch_array($result1)) {
             echo "<div class='comments_content' style='margin-left:10%;'>";
             echo "<h4><a href='deletechat.php?id=" . $row['id'] . "&adid=" . $_GET['id'] . "'> X</a></h4>";
@@ -186,7 +186,7 @@ while ($row = mysqli_fetch_array($result)) {
 
     }
 }
-mysqli_close($con);
+mysqli_close($bd);
 
 ?>
 					</div></div>

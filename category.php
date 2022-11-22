@@ -111,7 +111,7 @@ if ($place == null) {
     $sql = "SELECT * FROM " . $datatable . " WHERE category LIKE '%$category%' and city LIKE'%$place%' ORDER BY ID ASC LIMIT $start_from, " . $results_per_page;
 }
 
-$rs_result = mysqli_query($bd1, $sql);
+$rs_result = mysqli_query($bd, $sql);
 while ($row = mysqli_fetch_array($rs_result)) {
     echo "
     <div class='col-lg-4 col-md-12 mb-lg-0 mb-4' style='margin-top:5%;'>
