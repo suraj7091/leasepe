@@ -24,15 +24,11 @@ $id=$_SESSION['id'];
 $price=$price.$rent;
 $phone=$_SESSION['SESS_FIRST_NAME'];
 $tablename=$_SESSION['SESS_FIRST_NAME'];
-$k=$tablename.$id;
 
-$query="UPDATE  addsall_ SET title='$title',category='$category',price='$price',name='$name',phone='$phone',city='$city',des='$des' WHERE id='$k'";
+
+$query="UPDATE  addsall_ SET title='$title',category='$category',price='$price',name='$name',phone='$phone',city='$city',des='$des' WHERE id='$id'";
 //echo $query;
 mysqli_query($bd,$query);
-$tablename="s".$tablename;
-$query2="UPDATE  $tablename SET title='$title',category='$category',price='$price',name='$name',phone='$phone',city='$city',des='$des' WHERE id='$id'";
-echo $query2;
-mysqli_query($bd,$query2);
 header('location:account.php');
 exit();
 ?>

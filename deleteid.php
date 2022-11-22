@@ -9,18 +9,9 @@ if(!isset($_SESSION['SESS_FIRST_NAME'])) {
 include('connection.php');
 
 $user=$_SESSION['SESS_FIRST_NAME'];
-$user1="s".$user;
-$query="SELECT * FROM $user1 where 1 ";
+$query="delete FROM addsall_ where memberid=$user ";
 $result=mysqli_query($bd,$query);
-if($result!=NULL){
-while($row=mysqli_fetch_array($result))
-{
-$query1="DELETE FROM addsall_ where id='$user$row[0]'";
-mysqli_query($bd,$query5);
-$result1=mysqli_query($bd,$query1);
-}}
-$query2="DROP TABLE $user1";
-$result2=mysqli_query($bd,$query2);
+
 $query3="DELETE FROM member WHERE phonenumber='$user'";
 //echo $query3;
 $result3=mysqli_query($bd,$query3);

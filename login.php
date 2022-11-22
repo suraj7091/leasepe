@@ -106,7 +106,7 @@ border-radius:6px;
                                 <h3>Login</h3>
                             </div>
                             <!--Body-->
-                            <form action="verify.php" name="login" method="post" onSubmit="return validate()">
+                            <form action="verifyCaptcha.php" name="login" method="post" onSubmit="return validate()">
                                 <div class="md-form">
                                     <i class="fa fa-id-card prefix grey-text"></i>
                                     <input id="cyanForm-email" class="form-control" type="text" name="id" required>

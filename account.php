@@ -93,9 +93,8 @@ border-radius:6px;
 <?php
 include "connection.php";
 $id = $_SESSION['SESS_FIRST_NAME'];
-$id = "s" . $id;
 
-$result = mysqli_query($bd, "SELECT * FROM $id");
+$result = mysqli_query($bd, "SELECT * FROM addsall_ where memberid=$id");
 echo nl2br("\n");
 if ($result != null) {
     while ($row = mysqli_fetch_array($result)) {

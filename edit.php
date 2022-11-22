@@ -69,9 +69,7 @@ select {
 $user = $_SESSION["SESS_FIRST_NAME"];
 $id = mysqli_real_escape_string($bd, $_GET["id"]);
 $_SESSION['id'] = $id;
-$user = "s" . $user;
-
-$query = "SELECT * FROM $user where id='$id'";
+$query = "SELECT * FROM addsall_ where id='$id'";
 
 $result = mysqli_query($bd, $query);
 if (mysqli_num_rows($result) == null) {

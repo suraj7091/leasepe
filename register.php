@@ -73,7 +73,7 @@ if (isset($_SESSION['SESS_FIRST_NAME'])) {
                 			<h3 class="pink-text mb-5"><strong>Register</strong></h3>
 						</div>
 						<!--form-->
-						<form name="reg" id="register" action="first.php" onSubmit="return validateForm()" method="post" enctype="multipart/form-data">
+						<form name="reg" id="register" action="prepareLoginData.php" onSubmit="return validateForm()" method="post" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="md-form">

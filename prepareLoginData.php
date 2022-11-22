@@ -13,7 +13,7 @@ if (isset($_POST['phone'])) {
     $otp = 1;
     $_SESSION['otp'] = $otp;
     $_SESSION['key'] = $b;
-    header("location:demo.php");
+    header("location:verifyPhoneForSignup.php");
 
     exit();
 } else {

@@ -125,7 +125,7 @@ if (!isset($_SESSION['SESS_FIRST_NAME'])) {
   </form>
   <form class="form-inline" name="search" onSubmit= " return getdata()"  method="POST">
     <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search2" aria-label="Search" required>
-    <button type="submit" class="btn purple-gradient btn-sm" >search</button>
+    <button type="submit" class="btn black-gradient btn-sm" >search</button>
   </form>
 </div>
 
@@ -142,7 +142,7 @@ if (!isset($_SESSION['SESS_FIRST_NAME'])) {
         </button>
       </div>
 
-      <form name="reg" id="submit" action="verify.php" method="POST" class="col-md-12" enctype="multipart/form-data">
+      <form name="reg" id="submit" action="verifyCaptcha.php" method="POST" class="col-md-12" enctype="multipart/form-data">
         <div class="modal-body">
           <h5 class="modal-title" id="exampleModalLabel"><B style='margin-left:30%;font-size:40px;'>login</B></h5>
 
@@ -170,7 +170,7 @@ if (!isset($_SESSION['SESS_FIRST_NAME'])) {
           </div>
 
           <div class="modal-footer">
-            <button type="submit" class="btn btn-secondary" onsubmit="verify.php">submit</button>
+            <button type="submit" class="btn btn-secondary" onsubmit="verifyCaptcha.php">submit</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
           </div>
         </form>

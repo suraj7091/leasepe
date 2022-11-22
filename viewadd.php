@@ -52,7 +52,7 @@ $sql = "select * from addsall_ where id='$id'";
 $rs = mysqli_query($bd, $sql);
 $row = mysqli_fetch_array($rs);
 if ($row[7] != null && $row[8] != null) {
-    echo "<div class='row'><div class='col-md-2'	style='float:left;'><input type='image'  src='pa.png' onclick='func()'/></div>";
+    echo "<div class='row'><div class='col-md-2'	style='float:left;'><input type='image' style='width:30px'  src='pa.png' onclick='func()'/></div>";
 }
 
 if ($row[7] != null) {
@@ -78,7 +78,7 @@ if ($row[7] != null) {
 
 if ($row[8] != null && $row[7] != null) {
 
-    echo "<div class='col-md-10'><input  type='image'  src='pa2.png' onclick='func2()'/></div>
+    echo "<div class='col-md-10'><input  type='image' style='width:50' src='pa2.png' onclick='func2()'/></div>
 						</div><hr>
 						<div class='row'>
 						<div class='col-md-4' >
@@ -154,8 +154,8 @@ if (isset($_SESSION['SESS_FIRST_NAME'])) {
 				</div></div>
 					<div id="comment_logs">
 						<?php
-$comment = $_GET['id'];
-$result = mysqli_query($bd, "SELECT * FROM $comment ORDER BY date_publish ASC");
+$comment_id = $_GET['id'];
+$result = mysqli_query($bd, "SELECT * FROM comments where adid=$comment_id ORDER BY date_publish ASC");
 
 while ($row = mysqli_fetch_array($result)) {
 
@@ -171,10 +171,10 @@ while ($row = mysqli_fetch_array($result)) {
         echo "<div class='comment_input' id='die" . $row['id'] . "' style='display:none;'> <form name='form'><textarea name='comments' id='" . $row['id'] . "' placeholder='Leave Comments Here...' style='width:80%; height:100px;'></textarea></br></br> <a href='#' onClick='commentSubmit2(" . $row['id'] . ")' class='button'>Post</a></br></form></div>";
         echo "</div>";
         $p = $row['id'];
-        $result1 = mysqli_query($bd, "SELECT * FROM $comment where parent='$p' ORDER BY date_publish ASC");
+        $result1 = mysqli_query($bd, "SELECT * FROM comments where parent='$p' and adid=$comment_id ORDER BY date_publish ASC");
         while ($row1 = mysqli_fetch_array($result1)) {
             echo "<div class='comments_content' style='margin-left:10%;'>";
-            echo "<h4><a href='deletechat.php?id=" . $row['id'] . "&adid=" . $_GET['id'] . "'> X</a></h4>";
+            echo "<h4><a href='deletechat.php?id=" . $row1['id'] . "&adid=" . $_GET['id'] . "'> X</a></h4>";
             echo "<p>" . $row1['name'] . "&nbsp";
             echo $row1['date_publish'] . "</p>";
             echo "<h3 style='color:black;margin-left:5%;'>" . $row1['comments'] . "</h3>";

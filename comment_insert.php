@@ -9,16 +9,16 @@ require "connection.php";
 if ($parent == -1) {
     $parent1 = -1;
 } else {
-    $result1 = mysqli_query($bd, "SELECT * FROM $id where id='$parent'");
+    $result1 = mysqli_query($bd, "SELECT * FROM comments where id='$parent' and adid=$id");
     $row = mysqli_fetch_array($result1);
     $parent1 = $row['parent'];
     if ($parent1 == -1) {
         $parent1 = $row['id'];
     }
 }
-mysqli_query($bd, "INSERT INTO $id(name, comments,parent,userid) VALUES('$name','$comments','$parent1','$userid')");
+mysqli_query($bd, "INSERT INTO comments (name, comments,parent,userid,adid) VALUES('$name','$comments','$parent1','$userid','$id')");
 
-$result = mysqli_query($bd, "SELECT * FROM $id ORDER BY date_publish ASC");
+$result = mysqli_query($bd, "SELECT * FROM comments where adid=$id ORDER BY date_publish ASC");
 
 while ($row = mysqli_fetch_array($result)) {
 
@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($result)) {
         echo "<div class='comment_input' id='die" . $row['id'] . "' style='display:none;'> <form name='form'><textarea name='comments' id='" . $row['id'] . "' placeholder='Leave Comments Here...' style='width:635px; height:100px;'></textarea></br></br> <a href='#' onClick='commentSubmit2(" . $row['id'] . ")' class='button'>Post</a></br></form></div>";
         echo "</div>";
         $p = $row['id'];
-        $result1 = mysqli_query($bd, "SELECT * FROM $id where parent='$p' ORDER BY date_publish ASC");
+        $result1 = mysqli_query($bd, "SELECT * FROM comments where parent='$p' and adid=$id ORDER BY date_publish ASC");
         while ($row1 = mysqli_fetch_array($result1)) {
             echo "<div class='comments_content' style='margin-left:10%;'>";
             echo "<h4><a href='deletechat.php?id=" . $row1['id'] . "&adid=" . $_GET['id'] . "'> X</a></h4>";
